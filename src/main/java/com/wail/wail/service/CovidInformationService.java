@@ -21,6 +21,10 @@ public class CovidInformationService {
     private ArrayList<CovidInformation> updateList = new ArrayList<>();
     private String linkCsvFile = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
 
+    public ArrayList<CovidInformation> getUpdateList() {
+        return updateList;
+    }
+
     @PostConstruct
     @Scheduled(cron = "* * 1 * * *")
     public void BringInformationFromURL() throws IOException, InterruptedException {
