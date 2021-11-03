@@ -38,7 +38,8 @@ public class CovidInformationService {
             String provinceName = record.get("Province/State");
             String regionName = record.get("Country/Region");
             int numberOfCasesLastDay = Integer.parseInt(record.get(record.size() - 1));
-            currentList.add(new CovidInformation(provinceName, regionName, numberOfCasesLastDay));
+            if (!provinceName.equals(""))
+                currentList.add(new CovidInformation(provinceName, regionName, numberOfCasesLastDay));
         }
         this.updateList = currentList;
     }
