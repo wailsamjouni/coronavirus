@@ -9,10 +9,11 @@
 </head>
 
 <body>
-    <div class="p-3 mb-2 bg-primary text-white rounded-bottom">
-        <h1>COVID-19 CORONAVIRUS PANDEMIC</h1>
-        <h4>The coronavirus COVID-19 is affecting 221 countries and territories.</h4>
-    </div>
+    <div class="container">
+        <div class="p-3 mb-2 text-black rounded-bottom">
+            <h1>COVID-19 CORONAVIRUS PANDEMIC</h1>
+            <h4>The coronavirus COVID-19 is affecting 221 countries and territories.</h4>
+        </div>
 
         <div class="p-3 mb-2 bg-secondary text-white rounded-right">
             <div class="jumbotron">
@@ -21,21 +22,22 @@
                 <h4 class="display-4 text-black" th:text="${numberOfAllCases}"></h4>
             </div>
         </div>
-    <div>
-        <table class="table p-3 mb-2 bg-danger text-white">
-            <thead class="thead-dark">
-            <tr>
-                <th scope="col">Province/State</th>
-                <th scope="col">Country</th>
-                <th scope="col">Number of cases</th>
-            </tr>
-            </thead>
-            <tr th:each="listOfCovidInformation : ${listOfCovidInformation}">
-                <td th:text="${listOfCovidInformation.getProvinceName()}"></td>
-                <td th:text="${listOfCovidInformation.getRegionName()}"></td>
-                <td th:text="${listOfCovidInformation.getNumberOfCasesLastDay()}">0</td>
-            </tr>
-        </table>
+        <div>
+            <table class="table p-3 mb-2 bg-danger text-white">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Province/State</th>
+                    <th scope="col">Country</th>
+                    <th scope="col">Number of cases</th>
+                </tr>
+                </thead>
+                <tr th:each="listOfCovidInformation : ${listOfCovidInformation}">
+                    <td th:text="${listOfCovidInformation.getProvinceName()}"></td>
+                    <td th:text="${listOfCovidInformation.getRegionName()}"></td>
+                    <td th:text="${listOfCovidInformation.getNumberOfCasesLastDay()}">0</td>
+                </tr>
+            </table>
+        </div>
     </div>
 </body>
 </html>
